@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.vladyka</groupId>
+    <artifactId>volunteer-bot</artifactId>
+    <version>1.0</version>
+
+    <parent>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <version>2.5.9</version>
+    </parent>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+
+        <telegrambots.version>5.7.1</telegrambots.version>
+        <slf4j.version>1.7.30</slf4j.version>
+        <slf4j.version>1.7.30</slf4j.version>
+        <commons-logging.version>1.2</commons-logging.version>
+        <lombok.version>1.18.20</lombok.version>
+        <spring-boot.version>2.5.9</spring-boot.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.telegram</groupId>
+            <artifactId>telegrambots</artifactId>
+            <version>${telegrambots.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+
+        <!-- This starter will allow to auto-register your bot        -->
+        <dependency>
+            <groupId>org.telegram</groupId>
+            <artifactId>telegrambots-spring-boot-starter</artifactId>
+            <version>${telegrambots.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
