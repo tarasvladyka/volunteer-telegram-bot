@@ -38,9 +38,14 @@ public class INeedHelpHandler extends UserRequestHandler {
         ReplyKeyboardMarkup replyKeyboardMarkup = keyboardHelper.buildCitiesMenu(cities);
         telegramService.sendMessage(userRequest.getChatId(),"Оберіть місто або опишіть вручну⤵️", replyKeyboardMarkup);
 
-        UserSession userSession = userSessionService.getSession(userRequest.getChatId());
+        UserSession userSession = userRequest.getUserSession();
         userSession.setState(ConversationState.WAITING_FOR_CITY);
         userSessionService.saveSession(userSession.getChatId(), userSession);
+    }
+
+    @Override
+    public boolean isGlobal() {
+        return true;
     }
 
 }

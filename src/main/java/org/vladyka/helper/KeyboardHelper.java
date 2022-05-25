@@ -11,6 +11,9 @@ import java.util.stream.Collectors;
 
 import static org.vladyka.constant.Constants.BTN_CANCEL;
 
+/**
+ * Helper class, allows to build keyboards for users
+ */
 @Component
 public class KeyboardHelper {
 
@@ -50,7 +53,7 @@ public class KeyboardHelper {
                 .keyboard(List.of(keyboardRow))
                 .selective(true)
                 .resizeKeyboard(true)
-                .oneTimeKeyboard(true)
+                .oneTimeKeyboard(false)
                 .build();
     }
 }

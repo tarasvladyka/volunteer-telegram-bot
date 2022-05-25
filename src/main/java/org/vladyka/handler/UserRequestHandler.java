@@ -7,6 +7,7 @@ public abstract class UserRequestHandler {
 
     public abstract boolean isApplicable(UserRequest request);
     public abstract void handle(UserRequest dispatchRequest);
+    public abstract boolean isGlobal();
 
     public boolean isCommand(Update update, String command) {
         return update.hasMessage() && update.getMessage().isCommand()

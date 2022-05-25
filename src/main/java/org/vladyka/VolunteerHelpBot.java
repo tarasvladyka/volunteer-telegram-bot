@@ -45,6 +45,7 @@ public class VolunteerHelpBot extends TelegramLongPollingBot {
 
             Long chatId = update.getMessage().getChatId();
             UserSession session = userSessionService.getSession(chatId);
+
             UserRequest userRequest = UserRequest
                     .builder()
                     .update(update)
@@ -53,6 +54,7 @@ public class VolunteerHelpBot extends TelegramLongPollingBot {
                     .build();
 
             boolean dispatched = dispatcher.dispatch(userRequest);
+
             if (!dispatched) {
                 log.warn("Unexpected update from user");
             }

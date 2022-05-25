@@ -38,9 +38,17 @@ public class CityEnteredHandler extends UserRequestHandler {
                 "✍️Тепер опишіть яка допомога вам потрібна⤵️",
                 replyKeyboardMarkup);
 
-        UserSession userSession = userSessionService.getSession(userRequest.getChatId());
-        userSession.setState(ConversationState.WAITING_FOR_TEXT);
-        userSessionService.saveSession(userSession.getChatId(), userSession);
+        String city = userRequest.getUpdate().getMessage().getText();
+
+        UserSession session = userRequest.getUserSession();
+        session.setCity(city);
+        session.setState(ConversationState.WAITING_FOR_TEXT);
+        userSessionService.saveSession(userRequest.getChatId(), session);
+    }
+
+    @Override
+    public boolean isGlobal() {
+        return false;
     }
 
 }

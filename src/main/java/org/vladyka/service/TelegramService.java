@@ -8,6 +8,9 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
 import org.vladyka.sender.VolunteerHelpBotSender;
 
+/**
+ * This service allows to communicate with Telegram API
+ */
 @Slf4j
 @Component
 public class TelegramService {
@@ -27,6 +30,7 @@ public class TelegramService {
                 .builder()
                 .text(text)
                 .chatId(chatId.toString())
+                //Other possible parse modes: MARKDOWNV2, MARKDOWN, which allows to make text bold, and all other things
                 .parseMode(ParseMode.HTML)
                 .replyMarkup(replyKeyboard)
                 .build();

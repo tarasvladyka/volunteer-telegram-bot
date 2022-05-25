@@ -34,4 +34,9 @@ public class StartCommandHandler extends UserRequestHandler {
         telegramService.sendMessage(request.getChatId(),
                 "Обирайте з меню нижче ⤵️");
     }
+
+    @Override
+    public boolean isGlobal() {
+        return true;
+    }
 }

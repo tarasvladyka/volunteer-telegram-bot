@@ -34,9 +34,16 @@ public class TextEnteredHandler extends UserRequestHandler {
         ReplyKeyboardMarkup replyKeyboardMarkup = keyboardHelper.buildMainMenu();
         telegramService.sendMessage(userRequest.getChatId(),"Дякую, ваше звернення було зареєстровано!", replyKeyboardMarkup);
 
-        UserSession userSession = userSessionService.getSession(userRequest.getChatId());
-        userSession.setState(ConversationState.CONVERSATION_STARTED);
-        userSessionService.saveSession(userSession.getChatId(), userSession);
+        String text = userRequest.getUpdate().getMessage().getText();
+
+        UserSession session = userRequest.getUserSession();
+        session.setText(text);
+        session.setState(ConversationState.CONVERSATION_STARTED);
+        userSessionService.saveSession(userRequest.getChatId(), session);
     }
 
+    @Override
+    public boolean isGlobal() {
+        return false;
+    }
 }

@@ -11,6 +11,5 @@ public class UserSession {
     private Long chatId;
     private ConversationState state;
     private String city;
-    private String contactDetails;
     private String text;
 }
