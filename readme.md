@@ -23,4 +23,4 @@ If you observe issues during application start like `error removing old web-hook
 also check if you have provided good token.
 
 ### Demo
-![](https://github.com/tarasvladyka/demo.gif)
+![Alt text](https://github.com/tarasvladyka/volunteer-telegram-bot/blob/master/demo.gif)
