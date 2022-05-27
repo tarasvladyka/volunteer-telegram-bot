@@ -1,4 +1,4 @@
-## Volunteer Telegram bot for java
+## Volunteer Telegram bot for java(Ukrainian interface)
 
 ### Created using:
 - maven
