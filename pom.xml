@@ -45,6 +45,15 @@
             <version>${spring-boot.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
         <!-- This starter will allow to auto-register your bot        -->
         <dependency>
             <groupId>org.telegram</groupId>
